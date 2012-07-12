@@ -30,16 +30,10 @@
 			
 			
 			
+			<% control UpcomingEvents %> 
+
 			
-			
-			
-			
-			
-			<% if Events %>
-			
-					<% control Events %>
-						
-						
+					
 						
 						<div class="event">
 							<h3>
@@ -47,7 +41,7 @@
 								$EventTitle
 							<% else %>
 							
-							<a href="$Link">$EventTitle</a>
+							<a href="$Event.Link">$Event.Title</a>
 							<% end_if %>
 							
 							<span class="event-date">$_Dates</span>
@@ -58,7 +52,7 @@
 						    $Content
 						<% else %>
 						<div class="event-deets">
-						    <% control Event %>$Content.LimitWordCount(60)<% end_control %> 
+						    <% control Event %>$Content.LimitWordCount(100)<% end_control %> 
 						    <a href="$Link"><% _t('MORE','more...') %></a>
 						</div>
 						
@@ -68,14 +62,12 @@
 						<!--<a class="btn add" href="$ICSLink"><% _t('ADD','Add to Calendar') %></a>-->
 							
 					
-					<% end_control %>
+				
+			<% end_control %>
 			
-			<% else %>
-			<% _t('NOEVENTS','There are no events') %>.
-			<% end_if %>
+			
 
 
-			<a href="camps.html">See all...</a>
 			
 			
 
@@ -92,8 +84,13 @@
 		<h1 class="calendar-heading">Calendar</h1>
 		<div class="event-calendar">
 		
-			$LiveCalendarWidget
+
+$LiveCalendarWidget(events) 
+
+$LiveCalendarWidget(camps) 
+
 			
+	
 			
 		
 		</div>

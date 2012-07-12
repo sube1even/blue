@@ -37,6 +37,8 @@
 			<span class="top-divider"></span>
 					
 			<div class="subright-panel-content span5">
+				<% include GoogleMapBasic %>
+				
 				$Content
 				$Form
 				$PageComments

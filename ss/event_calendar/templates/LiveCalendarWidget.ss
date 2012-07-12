@@ -3,12 +3,28 @@
 <% require css(event_calendar/css/live_calendar_widget.css) %>
 <% if Ajax %><% else %><div id="live-calendar-widget"><% end_if %>
 <div id="live-calendar-widget-wrap">
+<script type="text/javascript">
+$(document).ready(function () {
+	$(".livewidgetmonth").hide();
+	$(".livewidgetmonth").each(function(){
+		if ($(this).attr('selected') == "selected") { $(this).show(); }
+		else { $(this).remove(); }
+	});
+})
+</script>
+
 <table class="calendar" cellspacing="0" cellpadding="0" border="0">
 	<thead>
 		<tr class="calendarHeader">
 			<td colspan="7" class="calendarMonthName">
-				<a class="month-nav" href="$PrevMonthLink">&laquo;</a>
+				<a class="month-nav left" href="$PrevMonthLink"><</a>
 				&nbsp;
+				
+				<div class="hidden-select">
+				<% control NavigationOptions %>
+					<span class="livewidgetmonth" $Selected>$Month</span>
+            	<% end_control %>
+            	
 				<select id="live-calendar-widget-navigator">		
 				  <optgroup label="<% _t('JUMPTOMONTH','Jump to...') %>" />		    
           <% control NavigationOptions %>
@@ -19,19 +35,35 @@
  				  <option value="$QuickWeekLink">This week</option>
  				  <option value="$QuickWeekendLink">This weekend</option>
 				</select>
+				</div>
+				
+				    
+
+ 				
+				
+				
+				
 				&nbsp;
-				<a class="month-nav" href="$NextMonthLink">&raquo;</a>
+				<a class="month-nav right" href="$NextMonthLink">></a>
 			</td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td class="calendarDayName">$Sun</td>
+			<!--<td class="calendarDayName">$Sun</td>
 			<td class="calendarDayName">$Mon</td>
 			<td class="calendarDayName">$Tue</td>
 			<td class="calendarDayName">$Wed</td>
 			<td class="calendarDayName">$Thu</td>
 			<td class="calendarDayName">$Fri</td>
-			<td class="calendarDayName">$Sat</td>
+			<td class="calendarDayName">$Sat</td>-->
+			
+			<td class="calendarDayName">S</td>
+			<td class="calendarDayName">M</td>
+			<td class="calendarDayName">T</td>
+			<td class="calendarDayName">W</td>
+			<td class="calendarDayName">T</td>
+			<td class="calendarDayName">F</td>
+			<td class="calendarDayName">S</td>
 			<td>&nbsp;</td>
 		</tr>
 	</thead>
