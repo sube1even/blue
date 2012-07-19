@@ -428,7 +428,7 @@ html #SearchForm_SearchForm .middleColumn {
 	width: 164px;
 	margin: 0 5px 0 0;
 	padding: 2px;
-	background-color: #51a9df;
+/* 	background-color: #51a9df; */
 	
 }
 	html #SearchForm_SearchForm .middleColumn input.text {
