@@ -3,9 +3,55 @@ class Page extends SiteTree {
 
 	public static $db = array(
 	);
+	
+	
 
 	public static $has_one = array(
+	
+	'MyFile' => 'File'
 	);
+	
+
+	static $many_many = array (
+	'MyFiles' => 'File'
+	);
+	
+	public function getCMSFields() {
+	$fields = parent::getCMSFields();
+	
+	$fields->addFieldToTab("Root.Content.Files", new MultipleFileAttachmentField('MyFiles','Upload some files'));
+	$fields->addFieldToTab("Root.Content.Banner", new FileAttachmentField('MyFile','Upload a file'));
+
+	return $fields;
+}
+
+
+/*
+static $has_one = array (
+'MyFile' => 'File'
+);
+ 
+public function getCMSFields() {
+$fields = parent::getCMSFields();
+$fields->addFieldToTab("Root.Content.File", new FileAttachmentField('MyFile','Upload a file'));
+return $fields;
+}
+
+
+
+static $many_many = array (
+'MyFiles' => 'File'
+);
+
+public function getCMSFields() {
+$fields = parent::getCMSFields();
+$fields->addFieldToTab("Root.Content.Files", new MultipleFileAttachmentField('MyFiles','Upload some files'));
+return $fields;
+}
+*/
+
+
+
 
 }
 class Page_Controller extends ContentController {
@@ -27,6 +73,7 @@ class Page_Controller extends ContentController {
 	 */
 	public static $allowed_actions = array (
 	);
+	
 
 	public function init() {
 		parent::init();
@@ -54,13 +101,24 @@ return DataObject::get_one("Calendar")->upcomingEvents(5, "is_announcement =0");
 } 
 
 
+
+
+
+	    
+
+
+
+
 public static $has_one = array(
 	"Sidebar" => "WidgetArea"
 	);
 	
+
+	
 	public function getCMSFields() {
 	$fields = parent::getCMSFields();
 	$fields->addFieldToTab("Root.Content.Widgets", new WidgetAreaEditor("Sidebar"));
+	
 	return $fields;
 }
 

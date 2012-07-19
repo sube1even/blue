@@ -4,20 +4,26 @@
 <% if Ajax %><% else %><div id="live-calendar-widget"><% end_if %>
 <div id="live-calendar-widget-wrap">
 <script type="text/javascript">
-$(document).ready(function () {
-	$(".livewidgetmonth").hide();
-	$(".livewidgetmonth").each(function(){
-		if ($(this).attr('selected') == "selected") { $(this).show(); }
-		else { $(this).remove(); }
+( function($) {
+
+	$(document).ready(function () {
+		$(".livewidgetmonth").hide();
+		$(".livewidgetmonth").each(function(){
+			if ($(this).attr('selected') == "selected") { $(this).show(); }
+			else { $(this).remove(); }
+		});
 	});
-})
+
+} ) ( jQuery );
+
 </script>
 
 <table class="calendar" cellspacing="0" cellpadding="0" border="0">
 	<thead>
 		<tr class="calendarHeader">
-			<td colspan="7" class="calendarMonthName">
-				<a class="month-nav left" href="$PrevMonthLink"><</a>
+			<td colspan="9" class="calendarMonthName">
+				<div style="position:relative;">
+				<a class="month-nav left" href="$PrevMonthLink">&lt;</a>
 				&nbsp;
 				
 				<div class="hidden-select">
@@ -44,7 +50,8 @@ $(document).ready(function () {
 				
 				
 				&nbsp;
-				<a class="month-nav right" href="$NextMonthLink">></a>
+				<a class="month-nav right" href="$NextMonthLink">&gt;</a>
+				</div>
 			</td>
 			<td>&nbsp;</td>
 		</tr>
@@ -57,6 +64,7 @@ $(document).ready(function () {
 			<td class="calendarDayName">$Fri</td>
 			<td class="calendarDayName">$Sat</td>-->
 			
+			<td class="calendarDayName">&nbsp;</td>
 			<td class="calendarDayName">S</td>
 			<td class="calendarDayName">M</td>
 			<td class="calendarDayName">T</td>
@@ -64,29 +72,32 @@ $(document).ready(function () {
 			<td class="calendarDayName">T</td>
 			<td class="calendarDayName">F</td>
 			<td class="calendarDayName">S</td>
-			<td>&nbsp;</td>
+			<td class="calendarDayName">&nbsp;</td>
 		</tr>
 	</thead>
 	<tbody>
   <% control Weeks %>
 		<tr>
+		<td>&nbsp;</td>
 		<% control Days %>
 			<td class="$Today $OutOfMonth $CurrentDay $HasEvent">
 			 <a href="$ShowDayLink">$Number</a>
 			</td>
     <% end_control %>
+    		
 			<td class="showWeek">
-        <a title="<% _t('SHOWWEEK','Show week') %>" href="$ShowWeekLink">&laquo;</a>
+				<a title="<% _t('SHOWWEEK','Show week') %>" href="$ShowWeekLink">&lt;</a>
 			</td>
+			
 		</tr>
   <% end_control %>
 	</tbody>
-	<tfoot>
-	 <tr>
-	   <td colspan="7"><a href="$CurrentMonthLink">Show month</a></td>
-	   <td>&nbsp;</td>
-	 </tr>
-	</tfoot>
+	
 </table>
+
+	<div>
+		<a href="$CurrentMonthLink" class="CurrentMonthLink">Show month</a>
+	</div>
+
 </div>
 <% if Ajax %><% else %></div><% end_if %>

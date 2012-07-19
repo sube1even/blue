@@ -13,6 +13,8 @@ $databaseConfig = array(
 	"path" => '',
 );
 
+
+
 MySQLDatabase::set_connection_charset('utf8');
 
 // This line set's the current theme. More themes can be
@@ -39,3 +41,9 @@ GoogleMapBasic::set_key("AIzaSyDxexHHjcaPQX3KPRyHkFZffD9yRjXSMkg"); //see http:/
 //GoogleMapBasic::set_exclude_from_classes(array("HomePage"));  // add relevant page classes
 //GoogleMapBasic::set_include_in_classes(array("ContactUsPage"));  //add relevant page classes
 //===================---------------- END googlemapbasic MODULE ----------------===================
+
+//Director::set_environment_type('dev');
+
+FulltextSearchable::enable();
+
+SiteTree::$breadcrumbs_delimiter = " <span class='breadcrumb-delimiter'>&nbsp;</span> ";

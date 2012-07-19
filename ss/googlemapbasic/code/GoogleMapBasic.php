@@ -105,13 +105,13 @@ class GoogleMapBasic_Controller extends Extension {
 					, 'GoogleMapBasicData'
 				);
 				Requirements::themedCSS('GoogleMapBasic');
-				return _t("GoolgeMapBasic.MAPLOADING", "map loading...");
+				return _t("GoolgeMapBasic.MAPLOADING", "<div class='map-loading'></div>");
 			}
 		}
 		return false;
 	}
 
-	function GoogleMapBasicStaticMapSource($width = 512, $height = 512) {
+	function GoogleMapBasicStaticMapSource($width = 240, $height = 210) {
 		$src = 'http://maps.googleapis.com/maps/api/staticmap?';
 		$src .= 'center='.urlencode($this->owner->Address);
 		$src .= '&amp;zoom='.$this->owner->ZoomLevel;

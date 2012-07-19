@@ -16,5 +16,13 @@
       $('#live-calendar-widget-navigator').change(refreshSelect);
     }
     bind();
+    
+    
+    
+
+
+
+    
+    
   });
 })(jQuery);

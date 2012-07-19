@@ -15,6 +15,8 @@ if($dir != "kickassets") {
 	user_error('Directory name must be "kickassets" (currently "'.$dir.'")',E_USER_ERROR);
 }
 
+
+
 LeftAndMain::require_javascript("kickassets/javascript/fancybox/fancybox.js");
 LeftAndMain::require_css("kickassets/javascript/fancybox/fancybox.css");
 LeftAndMain::require_javascript("kickassets/javascript/kickassets_init.js");

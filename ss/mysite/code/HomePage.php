@@ -23,7 +23,7 @@ function UpcomingEvents()
 
 $set = new DataObjectSet(); 
 foreach(DataObject::get("Calendar") as $cal) { 
-$set->merge($cal->upcomingEvents(4)); 
+$set->merge($cal->upcomingEvents(2)); 
 } 
 $arr = $set->toArray(); 
 CalendarUtil::date_sort($arr); 

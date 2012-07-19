@@ -27,6 +27,7 @@ var GoogleMapBasic = {
 	marker: null,
 	marker: null,
 	infoWindowObject: null,
+	addressDiv: null,
 	options: null,
 	location: null,
 
