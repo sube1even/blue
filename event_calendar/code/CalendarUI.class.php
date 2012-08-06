@@ -209,6 +209,7 @@ class LiveCalendarWidget extends ViewableData
 				  'OutOfMonth'      => $this->date_counter->format('m') != $this->start_date->format('m') ? "calendarOutOfMonth" : "",
 				  'CurrentDay'      => $current_day,
 				  'HasEvent'        => in_array($this->date_counter->date(), $event_map) ? "hasEvent" : "",
+				  'Events'          => $this->calendar->Events(null, $this->date_counter->date(), $this->date_counter->date()),
 				  'ShowDayLink' => $this->calendar->Link('view')."/".$this->date_counter->format('Ymd'),
 				  'Number'          => $this->date_counter->format('d')
 				)));
