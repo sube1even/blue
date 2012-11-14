@@ -1,26 +1,14 @@
-<% require css(event_calendar/css/calendar.css) %>
-<% require javascript(event_calendar/javascript/calendar_core.js) %>
-
-
-
-
-
-
-
-
-
-
-		
 <div class="slider-container span12">
 		<div id="slider" style="position: relative; ">
 
-				<img src="../images/image.png" width="960" height="330" style="position: absolute; z-index: 4; top: 0px; left: 0px; display: block; width: 960px; height: 330px; opacity: 1; ">
 			
-				<img src="../images/image2.png" width="960" height="330" style="position: absolute; top: 0px; left: 0px; width: 960px; height: 330px; z-index: 3; opacity: 0; display: none; ">
-				
-				<img src="../images/image3.png" width="960" height="330" style="position: absolute; top: 0px; left: 0px; width: 960px; height: 330px; z-index: 3; opacity: 0; display: none; ">
+			<% if MyFiles %>
+				<% control MyFiles %>
+					<img src="$URL" />
+				<% end_control %>
+			<% end_if %>
 			
-
+	
 		</div><div id="slider-pages"><a href="#" class="activeSlide">1</a><a href="#" class="">2</a><a href="#" class="">3</a></div>
 		<div class="slide-overlay"></div>
 	</div>
@@ -31,19 +19,11 @@
 
 		<div class="event-list">
 		
-
-		
 			<!--<a href="$RSSLink"><% _t('SUBSCRIBE','Subscribe to the Calendar') %></a>-->
-
-			
-			
-			
 			
 			<% control UpcomingEvents %> 
 
-			
-					
-						
+							
 						<div class="event">
 							<h3>
 							<% if Announcement %>
@@ -76,38 +56,21 @@
 			
 
 
-			
-			
-
-
-
-
-		
-
-		</div>
+			</div>
 		
 	</div>
 	
 	<div class="right-panel span5">
 		<h1 class="calendar-heading">Calendar</h1>
 		<div class="event-calendar">
-		
-
-
-
+	
 			$LiveCalendarWidget(events) 
 
-			
-	
-			
+				
 		
 		</div>
 		
 	</div>
-	
-	
-	
-	
 	
 	
 	
@@ -118,4 +81,3 @@
 		$CalendarWidget
 		$MonthNavigator
 		$CalendarFilterForm</div>
-		
