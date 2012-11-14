@@ -16,13 +16,22 @@
 	<div class="left-panel span8">
 
 		<h1 class="events-heading">Upcoming</h1>
-
-		<div class="event-list">
 		
+		
+		
+		<div class="event-list">
+			
+			<% if Content %>
+			<div class="event newstop">
+				$Content
+			</div>
+			<% end_if %>
+			
 			<!--<a href="$RSSLink"><% _t('SUBSCRIBE','Subscribe to the Calendar') %></a>-->
 			
 			<% control UpcomingEvents %> 
-
+						
+						
 							
 						<div class="event">
 							<h3>
