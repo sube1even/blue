@@ -391,6 +391,9 @@ html #SearchForm_SearchForm {
 	text-indent: -999px;
 	margin-left: -1px;
 }
+#SearchForm_SearchForm input[type="submit"]:hover {
+	background-color: #aacce7; 
+}
 	
 	
 #SearchForm_SearchForm input.text {
