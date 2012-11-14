@@ -39,7 +39,17 @@ h3 {font-weight: bold;color:#5a5a5a;}
 	font-size: 1.7em;
 	color:#5a5a5a;
 	line-height: 1.8em;
-	font-weight: normal;
+	font-weight: normal;margin-top:10px;
+}
+.event-list h3 a {
+	background: url(../images/icon-arrow.png) no-repeat right 0px;
+	text-decoration: none;
+	padding: 0 20px 0 0;
+
+}
+.event-list h3 a:hover {
+	background: url(../images/icon-arrow.png) no-repeat right -26px;
+	text-decoration: none;
 }
 h1 {line-height: 30px;margin-bottom: 3px;margin-top: 12px;}
 h2 {line-height: 20px;margin-bottom: 12px;margin-top: 4px;}
@@ -163,7 +173,7 @@ padding: 56px 20px 70px 108px;
 	position: relative;
 	z-index: 1;
 	background:#fff;
-	padding:113px 20px 20px 20px;
+	padding:90px 20px 20px 20px;
 	clear:both;
 	border: #72AAD4 1px solid;
 	border-radius: 5px;
@@ -178,7 +188,7 @@ padding: 56px 20px 70px 108px;
 	position: relative;
 	z-index: 1;
 	background:#fff;
-	padding:80px 28px 20px 28px;
+	padding:100px 24px 40px 32px;
 	clear:both;
 	border: #72AAD4 1px solid;
 	border-radius: 5px;
@@ -323,8 +333,11 @@ span.rightmenu-divider{background:#666;height:5px;border-radius: 2px;display: bl
 	margin:0 0 0 4px;
 	padding:0;
 }
-.subright-panel img {margin:0 0 20px 0;}
-a.st_sharethis_custom {font-family: 'BebasNeueRegular';font-size: 20px;color:#5a5a5a;text-decoration: none;line-height: 20px;margin-right: 0;margin-top:0;display:block;text-align: right;background:url(../images/share.png) no-repeat 60px -2px;padding: 0 4px 0 0;display:none;}
+.subright-panel img {margin:0 0 6px 0;}
+a.st_sharethis_custom {font-family: 'BebasNeueRegular';font-size: 20px;color:#5a5a5a;text-decoration: none;line-height: 20px;margin-right: 0;margin-top:0;display:block;text-align: right;background:url(../images/share.png) no-repeat 60px -2px;padding: 0 4px 0 0;display:block;}
+
+a.st_sharethis_custom:hover {}
+
 
 h2.download {font-family: 'BebasNeueRegular';font-size: 20px;color:#5a5a5a;line-height: 24px;margin-right: 0;margin-top:4px;display:block;background:url(../images/download.png) no-repeat 2px 0;padding: 0 0 0 26px;}
 
@@ -448,3 +461,20 @@ padding: 0 8px 2px 4px;
 margin: 0 0 0 6px;
 
 }
+
+.social-icons {
+	position: absolute;right:0;width:125px;
+}
+.social-icons-wrap {
+	position: absolute;
+display: block;
+height: 31px;
+overflow: hidden;
+width: 125px;
+
+right: 86px;
+top: 51px;
+}
+
+.social-icons span,.social-icons img { cursor: pointer; }
+.social-icons {cursor: default;}

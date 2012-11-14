@@ -44,10 +44,10 @@
 			<a href="" class="st_sharethis_custom offset7">SHARE</a>
 			
 			
-			<span class='st_facebook_large' displayText='Facebook'></span>
-<span class='st_twitter_large' displayText='Tweet'></span>
-<span class='st_pinterest_large' displayText='Pinterest'></span>
-<span class='st_email_large' displayText='Email'></span>
+			<span class='st_facebook_small' displayText='Facebook'></span>
+<span class='st_twitter_small' displayText='Tweet'></span>
+<span class='st_pinterest_small' displayText='Pinterest'></span>
+<span class='st_email_small' displayText='Email'></span>
 
 
 
